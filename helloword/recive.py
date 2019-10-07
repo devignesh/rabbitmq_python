@@ -1,10 +1,10 @@
 import pika
 
 connection = pika.BlockingConnection(
-    pika.ConnectionParameters(host='localhost'))
+pika.ConnectionParameters(host='127.0.0.1:8000'))
 channel = connection.channel()
 
-
+channel.queue_declare(queue='vickymsgque')
 
 def callback(ch, method, properties, body):
     print(" [x] Received %r" % body)
