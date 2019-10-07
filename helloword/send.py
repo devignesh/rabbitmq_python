@@ -1,5 +1,5 @@
 import pika
-connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+connection = pika.BlockingConnection(pika.ConnectionParameters('127.0.0.1:8000'))
 channel = connection.channel()
 channel.queue_declare(queue='vickymsgque')
 
