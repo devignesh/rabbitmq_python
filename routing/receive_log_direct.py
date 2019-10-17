@@ -5,7 +5,7 @@ connection = pika.BlockingConnection(
     pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
 
-channel.exchange_declare(exchange='direct_logss', exchange_type='direct')
+channel.exchange_declare(exchange='direct_logs', exchange_type='direct')
 
 result = channel.queue_declare(queue='', exclusive=True)
 queue_name = result.method.queue
