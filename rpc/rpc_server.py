@@ -5,7 +5,7 @@ connection = pika.BlockingConnection(
 
 channel = connection.channel()
 
-channel.queue_declare(queue='rpc_queue')
+channel.queue_declare(queue='rpc_queuee')
 
 def fib(n):
     if n == 0:
@@ -29,6 +29,6 @@ def on_request(ch, method, props, body):
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 channel.basic_qos(prefetch_count=1)
-channel.basic_consume(queue='rpc_queue', on_message_callback=on_request)
+channel.basic_consume(queue='rpc_queuee', on_message_callback=on_request)
 
 channel.start_consuming()
