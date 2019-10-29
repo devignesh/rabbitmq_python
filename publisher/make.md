@@ -30,3 +30,11 @@ if (outstandingMessageCount > 0) {
 
 
 Strategy #3: Handling Publisher Confirms Asynchronously
+
+Channel channel = connection.createChannel();
+channel.confirmSelect();
+channel.addConfirmListener((sequenceNumber, multiple) -> {
+    // code when message is confirmed
+}, (sequenceNumber, multiple) -> {
+    // code when message is nack-ed
+});
