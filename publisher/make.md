@@ -26,3 +26,7 @@ while (thereAreMessagesToPublish()) {
 if (outstandingMessageCount > 0) {
     ch.waitForConfirmsOrDie(5_000);
 }
+
+
+
+Strategy #3: Handling Publisher Confirms Asynchronously
