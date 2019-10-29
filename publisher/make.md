@@ -7,3 +7,6 @@ while (thereAreMessagesToPublish()) {
     // uses a 5 second timeout
     channel.waitForConfirmsOrDie(5_000);
 }
+
+
+Strategy #2: Publishing Messages in Batches
